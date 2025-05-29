@@ -34,8 +34,8 @@ const toggle = () => {
       temp.className = 'temp'
       temp.innerHTML = food
 
-      const rTop = Math.random() * (document.documentElement.clientHeight)
-      const rLeft = Math.random() * (document.documentElement.clientWidth)
+      const rTop = Math.random() * (document.documentElement.clientHeight - 50)
+      const rLeft = Math.random() * (document.documentElement.clientWidth - 50)
       const rSize = Math.random() * (37 - 14) + 14
       const rColor = `rgba(0,0,0,${Math.random().toFixed(2)})`
 
@@ -100,9 +100,6 @@ onBeforeUnmount(() => {
   background-image: url("./assets/bg.jpg");
   background-repeat: repeat;
   overflow: hidden;
-  display: flex;
-  position: relative;
-  flex-direction: column;
 
   .logo {
     margin: 0 auto;
@@ -119,9 +116,13 @@ onBeforeUnmount(() => {
 
   #wrapper {
     width: 500px;
-    height: 80px;
+    height: 90px;
     text-align: center;
     margin: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
     .button {
       background-color: rgba(0, 0, 0, .55);
